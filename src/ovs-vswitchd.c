@@ -22,6 +22,7 @@
 #include <signal.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #ifdef HAVE_MLOCKALL
 #include <sys/mman.h>
 #endif
@@ -165,6 +166,7 @@ main(int argc, char *argv[])
         if (should_service_stop()) {
             exiting = true;
         }
+        usleep(10000);
     }
     bridge_exit();
 #ifdef OPS
